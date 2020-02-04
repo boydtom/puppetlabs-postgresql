@@ -141,7 +141,7 @@ class postgresql::server::config {
     value => $port,
   }
 
-  if ($password_encryption) and (versioncmp($version, '10') >= 0){
+  if ($password_encryption) and (versioncmp($version, '13') >= 0){
     postgresql::server::config_entry { 'password_encryption':
       value => $password_encryption,
     }
